@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+
+	.logo {
+		display: block;
+		width: 120px;
+		height: auto;
+	}
