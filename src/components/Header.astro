@@ -1,14 +1,59 @@
 ---
 import logo from '../images/Logo.png';
-import '../styles/global.css';
 ---
 
-<header class="flex items-center gap-4 border border-main/20 bg-secondary p-10 dark:border-white/10 dark:bg-dark-secondary">
-        <img class="logo" src={logo.src} alt="SpiderMang logo" />
-       <h1 class="text-5xl font-bold italic text-main dark:text-dark-accent">
-           SpiderMang
-        </h1>
-
+<header class="site-header">
+	<div class="container header-inner">
+		<a class="brand" href="#home" aria-label="SpiderMang home">
+			<img class="logo" src={logo.src} alt="" />
+			<span>SpiderMang</span>
+		</a>
+		<nav aria-label="Main navigation">
+			<ul class="nav-list">
+				<li><a href="#hero">Home</a></li>
+				<li><a href="#services">Services</a></li>
+				<li><a href="#process">Process</a></li>
+                <li><a href="#about">About</a></li>
+				<li><a href="#projects">Projects</a></li>
+				<li><a href="#contact">Contact</a></li>
+			</ul>
+		</nav>
+		<button
+			class="theme-toggle"
+			type="button"
+			data-theme-toggle
+			aria-label="Switch to light mode"
+			aria-pressed="true"
+		>
+			<span data-theme-icon aria-hidden="true">☼</span>
+			<span data-theme-label>Light mode</span>
+		</button>
+	</div>
 </header>
 
+<script>
+	const themeButton = document.querySelector<HTMLButtonElement>('[data-theme-toggle]');
+	const themeIcon = themeButton?.querySelector('[data-theme-icon]');
+	const themeLabel = themeButton?.querySelector('[data-theme-label]');
+	const root = document.documentElement;
+
+	const updateThemeButton = () => {
+		const isDark = root.dataset.theme !== 'light';
+		themeButton?.setAttribute('aria-pressed', String(isDark));
+		themeButton?.setAttribute('aria-label', `Switch to ${isDark ? 'light' : 'dark'} mode`);
+
+		if (themeIcon && themeLabel) {
+			themeIcon.textContent = isDark ? '☼' : '☾';
+			themeLabel.textContent = isDark ? 'Light mode' : 'Dark mode';
+		}
+	};
+
+	updateThemeButton();
+
+	themeButton?.addEventListener('click', () => {
+		root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+		localStorage.setItem('spidermang-theme', root.dataset.theme);
+		updateThemeButton();
+	});
+</script>
 
