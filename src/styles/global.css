@@ -186,7 +186,7 @@ a:focus-visible {
 }
 
 .spider-figure {
-	opacity: 0.9;
+	opacity: 0.75;
 }
 
 .hero-content {
@@ -404,9 +404,14 @@ h3 {
 
 .contact-grid {
 	display: grid;
-	grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+	grid-template-columns: minmax(0, 1fr);
 	gap: 2rem;
 	margin-top: 2rem;
+}
+
+.contact-info {
+	width: min(100%, 640px);
+	margin-inline: auto;
 }
 
 .contact-details,
@@ -415,6 +420,10 @@ h3 {
 	border: 1px solid var(--color-border);
 	border-radius: 0.65rem;
 	background: var(--color-surface);
+}
+
+.contact-form {
+	text-align: left;
 }
 
 .contact-details dl {

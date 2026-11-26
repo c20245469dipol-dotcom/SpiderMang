@@ -6,24 +6,62 @@ import spiderCage from '../../images/products/spider-cage.png';
 
 <section class="section" id="projects">
 	<div class="container">
-		<p class="eyebrow">Projects</p>
+		<p class="eyebrow">Shop</p>
 		<h2>Explore the products</h2>
+		<p class="section-intro">
+			Browse spiders and cases, or choose a Spider Gload variety to order.
+		</p>
 		<div class="card-grid product-grid">
 			<article class="card product-card">
 				<img class="product-image" src={spider.src} alt="Spider" loading="lazy" />
+				<p class="product-status">Browse</p>
 				<h3>Spider</h3>
-				<button class="button" style="background-color: red;"  disabled>See Details</button>
+				<p>Explore the available spiders and choose the one you like.</p>
 			</article>
 			<article class="card product-card">
-				<img class="product-image" src={spiderVitamins.src} alt="Spider vitamins" loading="lazy" />
+				<img class="product-image" src={spiderVitamins.src} alt="Spider Gload" loading="lazy" />
+				<p class="product-status">Order only</p>
 				<h3>Spider GLoad</h3>
-				<button class="button" style="background-color: red;"  disabled>See Details</button>
+				<p>Choose a variety when placing your Spider Gload order.</p>
+				<label class="product-select-label" for="gload-variety">Gload variety</label>
+				<select class="product-select" id="gload-variety" name="gload-variety">
+					<option value="" disabled selected>Select a variety</option>
+					<option value="bayabas-gload">Bayabas gload</option>
+					<option value="gods-load">Gods load</option>
+					<option value="kapaleta-load">Kapaleta Load</option>
+				</select>
 			</article>
 			<article class="card product-card">
-				<img class="product-image" src={spiderCage.src} alt="Spider cage" loading="lazy" />
+				<img class="product-image" src={spiderCage.src} alt="Spider case" loading="lazy" />
+				<p class="product-status">Browse</p>
 				<h3>Spider Case</h3>
-				<button class="button" style="background-color: red;"  disabled>See Details</button>
+				<p>Browse the available cases and choose your preferred one.</p>
 			</article>
 		</div>
 	</div>
 </section>
+
+<style>
+	.product-select-label {
+		display: block;
+		margin-top: 1.25rem;
+		font-size: 0.9rem;
+		font-weight: 700;
+	}
+
+	.product-select {
+		width: 100%;
+		margin-top: 0.4rem;
+		padding: 0.7rem 0.8rem;
+		border: 1px solid var(--color-border);
+		border-radius: 0.4rem;
+		background: var(--color-bg);
+		color: var(--color-text);
+		font: inherit;
+	}
+
+	.product-select:focus-visible {
+		outline: 3px solid var(--color-accent-light);
+		outline-offset: 3px;
+	}
+</style>
