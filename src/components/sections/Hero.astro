@@ -1,7 +1,9 @@
 ---
 import spiderBackground from '../../images/spider-background.png';
+import aboutPhoto from '../../images/about-photo.jpg';
 ---
 
+	
 <section class="hero section" id="hero">
 	<svg class="hero-art" viewBox="0 0 500 500" aria-hidden="true" focusable="false">
 		<g class="web-lines" fill="none" stroke="currentColor" stroke-width="2">
@@ -23,12 +25,19 @@ import spiderBackground from '../../images/spider-background.png';
 			preserveAspectRatio="xMidYMid meet"
 		/>
 	</svg>
+	
 	<div class="container hero-content">
 		<h1>Welcome to SpiderMang!</h1>
 		<p class="hero-copy">
 			Explore the SpiderMang Product: Spider, Spider GLoad, and Spider Case.
 			Product details, pricing, and availability are coming soon.
 		</p>
+		<div>
+			<figure class="about-photo">
+			<img src={aboutPhoto.src} loading="lazy" />
+			<figcaption>Preparing for the first catalog</figcaption>
+		</figure>
+		</div>
 		<div class="button-row">
 			<a class="button button-primary" href="#projects">Browse products</a>
 			<a class="button button-secondary" href="#about">About SpiderMang</a>
